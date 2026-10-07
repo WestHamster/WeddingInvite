@@ -52,7 +52,7 @@ body{background:#f6edda url('traditional-art.jpg') center top/cover fixed no-rep
   });
   window.addEventListener('message', event => {
     const data = event.data;
-    if (!/^https:\/\/([a-z0-9-]+\.)?script\.googleusercontent\.com$/.test(event.origin) || !pending || !data || data.type !== 'wedding-rsvp' || data.requestId !== requestId) return;
+    if (!/^https:\/\/[a-z0-9-]+\.googleusercontent\.com$/.test(event.origin) || !pending || !data || data.type !== 'wedding-rsvp' || data.requestId !== requestId) return;
     clearTimeout(timer); pending = false;
     if (data.ok === true) {
       status.textContent = 'Thank you! Your RSVP has been saved.';
